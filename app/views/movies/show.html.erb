@@ -1,24 +1,25 @@
 <div>
   <div>
     <h1>
-      Movie #<%= @the_movie.id %> details
+      Movie #<%= @the_movie.id %>
+      details
     </h1>
 
     <div>
       <div>
-        <a href="/movies">
+        <a href="<%= movies_path %> ">
           Go back
         </a>
       </div>
 
       <div>
-        <a href="/movies/<%= @the_movie.id %>/edit">
+        <a href="<%= edit_movie_path(@the_movie) %>">
           Edit movie
         </a>
       </div>
 
       <div>
-        <a href="/movies/<%= @the_movie.id %>" data-method="delete">
+        <a href="<%= movie_path(@the_movie) %>" data-method="delete">
           Delete movie
         </a>
       </div>
@@ -43,14 +44,16 @@
         Created at
       </dt>
       <dd>
-        <%= time_ago_in_words(@the_movie.created_at) %> ago
+        <%= time_ago_in_words(@the_movie.created_at) %>
+        ago
       </dd>
 
       <dt>
         Updated at
       </dt>
       <dd>
-        <%= time_ago_in_words(@the_movie.updated_at) %> ago
+        <%= time_ago_in_words(@the_movie.updated_at) %>
+        ago
       </dd>
     </dl>
   </div>
